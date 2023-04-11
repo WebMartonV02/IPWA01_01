@@ -5,14 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+//Angular-Material imports
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { UbergabeComponent } from './components/nav-items/geschaeftsstelle-übergabe/geschaeftsstelle-ubergabe.component';
+import { AbholungCompnent } from './components/nav-items/abholung/abholung.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UbergabeComponent,
+    AbholungCompnent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
