@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
 
 @Component({
     selector: 'app-abholung',
@@ -7,9 +8,15 @@ import { Component, OnInit } from "@angular/core";
 })
 export class AbholungCompnent implements OnInit
 {
-    constructor() {}
+    constructor(private _formBuilder: FormBuilder) {}
 
     ngOnInit(): void 
     {
+        this.BuildForm();
+    }
+
+    private BuildForm(): void
+    {
+        
     }
 }

@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { UbergabeComponent } from './components/nav-items/geschaeftsstelle-übergabe/geschaeftsstelle-ubergabe.component';
 import { AbholungCompnent } from './components/nav-items/abholung/abholung.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { AbholungCompnent } from './components/nav-items/abholung/abholung.compo
     BrowserAnimationsModule,
 
     MatToolbarModule,
+
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
