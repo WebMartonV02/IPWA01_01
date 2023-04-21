@@ -1,0 +1,48 @@
+.container 
+{
+    backdrop-filter: blur(1px) !important;
+    display: flex;        
+    flex-direction: column;
+    
+    height: 91vh;
+    
+    position: relative;
+    justify-content: center;    
+    align-items: center;
+    overflow: hidden;
+}
+
+.form-div 
+{
+    width: 40%;
+    padding: 10px;
+    border-radius: 25px !important;    
+    background-blend-mode: overlay, overlay, overlay, normal;
+    box-shadow: 5px 5px 20px 2px #00000038, inset 0px 0px 15px 0px #ffffff !important;
+
+    text-align: center;
+    align-content: center;
+    margin: auto;
+}
+
+.form-element 
+{
+    width: 90%;
+    margin: auto;
+
+    &-adresse 
+    {
+        width: 55%;
+    }
+
+    &-plz
+    {
+        width: 30%;
+        margin-left: 5%;
+    }
+}
+
+.address-div 
+{
+    margin: auto;
+}

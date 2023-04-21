@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AbholungsModel } from "./models/abholung.model";
 import { Router } from "@angular/router";
+import { CountryModel } from "src/app/shared/models/country.model";
+import { ProvidedCountryNames } from "src/app/shared/countries.provider";
 
 @Component({
     selector: 'app-abholung',
@@ -11,6 +13,7 @@ import { Router } from "@angular/router";
 export class AbholungCompnent implements OnInit
 {
     public abholungFormGroup!: FormGroup;
+    public countryNames: Array<CountryModel> = ProvidedCountryNames;
 
     private _abholungsModel: AbholungsModel = new AbholungsModel();
 
@@ -34,7 +37,8 @@ export class AbholungCompnent implements OnInit
         {
           abholAdresse: [this._abholungsModel.AbholAdresse ,Validators.required],
           kleidungsArt: [this._abholungsModel.KleidungsArt ,Validators.required],
-          krisenGebiet: [this._abholungsModel.KrisenGebiet, Validators.required]
+          krisenGebiet: [this._abholungsModel.KrisenGebiet, Validators.required],
+          postleitZahl: [this._abholungsModel.PostleitZahl, Validators.required]
         });
     }
 }

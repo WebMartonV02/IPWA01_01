@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'Kleiderspenden_Registrierung';
+export class AppComponent implements OnInit
+{
+  title = 'Kleiderspenden Registrierung';
+
+  constructor() {}
+
+  ngOnInit(): void 
+  {
+    sessionStorage.setItem('postleitZahl', '99084')
+  }
 }
