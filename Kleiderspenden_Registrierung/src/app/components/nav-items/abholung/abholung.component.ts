@@ -4,11 +4,13 @@ import { AbholungsModel } from "./models/abholung.model";
 import { Router } from "@angular/router";
 import { CountryModel } from "src/app/shared/models/country.model";
 import { ProvidedCountryNames } from "src/app/shared/countries.provider";
+import { AbholungFormProviderService } from "./services/abholung-form-provider.service";
 
 @Component({
     selector: 'app-abholung',
     templateUrl: 'abholung.component.html',
     styleUrls: ['abholung.component.scss'],
+    providers: [AbholungFormProviderService]
 })
 export class AbholungCompnent implements OnInit
 {
@@ -19,7 +21,8 @@ export class AbholungCompnent implements OnInit
 
     constructor(
       private _formBuilder: FormBuilder,
-      private _router: Router) {}
+      private _router: Router,
+      private _abholungFormProviderService: AbholungFormProviderService) {}
 
     ngOnInit(): void 
     {
@@ -28,6 +31,8 @@ export class AbholungCompnent implements OnInit
 
     public NavigateToBestatigungPage(): void
     {
+      this._abholungFormProviderService.SetData(this._abholungsModel);
+      
       this._router.navigate(['/bestatigung']);
     }
 

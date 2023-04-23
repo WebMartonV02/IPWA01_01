@@ -1,28 +1,38 @@
 .container 
 {
     backdrop-filter: blur(1px) !important;
-    display: flex;        
-    flex-direction: column;
-    
-    height: 91vh;
-    
+
+    height: 92%;
+    display: flex;
     position: relative;
-    justify-content: center;    
+    justify-content: center;
     align-items: center;
-    overflow: hidden;
+}
+
+.title-div 
+{
+    display: flex;
+    padding: 10px;
+    font-size: large;
+    margin-bottom: 10%;
+}
+
+.material-symbols-outlined 
+{
+    margin: 0 10px;
+    color: #4d4d4d;
 }
 
 .form-div 
 {
-    width: 40%;
-    padding: 10px;
-    border-radius: 25px !important;    
+    width: 30%;
+    padding: 20px;
+    border-radius: 25px !important;
     background-blend-mode: overlay, overlay, overlay, normal;
     box-shadow: 5px 5px 20px 2px #00000038, inset 0px 0px 15px 0px #ffffff !important;
 
     text-align: center;
     align-content: center;
-    margin: auto;
 }
 
 .form-element 
@@ -35,7 +45,7 @@
         width: 55%;
     }
 
-    &-plz
+    &-plz 
     {
         width: 30%;
         margin-left: 5%;
