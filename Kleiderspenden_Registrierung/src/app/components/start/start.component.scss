@@ -1,0 +1,30 @@
+.starting-container-div
+{
+    height: 92%;
+    display: inline-grid;
+    text-align: center;
+    justify-items: center;
+
+    .image-div
+    {
+        width: 50%;
+        margin: auto;
+
+        #img-id
+        {
+            width: 60%;
+            border-radius: 50px 150px;
+        }
+    }
+
+    #starting-text--p
+    {
+        margin: auto;
+        line-height: normal;
+        font-size: 200%;
+        justify-content: center;
+        letter-spacing: auto;
+        width: 40%;
+    }
+}
+
