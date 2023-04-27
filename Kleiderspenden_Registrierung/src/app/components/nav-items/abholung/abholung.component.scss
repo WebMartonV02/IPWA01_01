@@ -1,60 +1,12 @@
-.container 
+.form-element-adresse 
 {
-    backdrop-filter: blur(1px) !important;
-
-    height: 92%;
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
+    width: 55%;
 }
 
-.title-div 
-{
-    display: flex;
-    padding: 10px;
-    font-size: large;
-    margin-bottom: 10%;
-}
-
-.material-symbols-outlined 
-{
-    margin: 0 10px;
-    color: #4d4d4d;
-}
-
-.form-div 
+.form-element-plz 
 {
     width: 30%;
-    padding: 20px;
-    border-radius: 25px !important;
-    background-blend-mode: overlay, overlay, overlay, normal;
-    box-shadow: 5px 5px 20px 2px #00000038, inset 0px 0px 15px 0px #ffffff !important;
-
-    text-align: center;
-    align-content: center;
-
-    @media  only screen and (max-width: 600px) 
-    {
-        width: 70%;   
-    }
-}
-
-.form-element 
-{
-    width: 90%;
-    margin: auto;
-
-    &-adresse 
-    {
-        width: 55%;
-    }
-
-    &-plz 
-    {
-        width: 30%;
-        margin-left: 5%;
-    }
+    margin-left: 5%;
 }
 
 .address-div 
