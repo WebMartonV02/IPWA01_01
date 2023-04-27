@@ -5,6 +5,7 @@ import { Router } from "@angular/router";
 import { CountryModel } from "src/app/shared/models/country.model";
 import { ProvidedCountryNames } from "src/app/shared/countries.provider";
 import { AbholungFormProviderService } from "./services/abholung-form-provider.service";
+import { ComponentsEnum } from "src/app/shared/models/components-enum.const";
 
 @Component({
     selector: 'app-abholung',
@@ -32,9 +33,11 @@ export class AbholungCompnent implements OnInit
     public NavigateToBestatigungPage(): void
     {
       this._abholungFormProviderService.SetData(this._abholungsModel);
+      this._abholungFormProviderService.SetExecuterComponent(ComponentsEnum.Abholung);
       
       this._router.navigate(['/bestatigung']);
     }
+    
 
     private BuildForm(): void
     {

@@ -1,21 +1,44 @@
+$navbar-height: 8%;
+
 .navbar
 {
-    height: 8%;
+    height: $navbar-height;
+    align-items: center;
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    @media only screen and (max-width: 600px)
+    {
+        justify-content: center;
+    }
 }
 
 .span--space-filler 
 {
     display: block;
     width: 2vw;
+
+    @media only screen and (max-width: 600px)
+    {
+        width: 7vw;
+    }
 }
 
 .a--nav-item
 {
     text-decoration: none;
     color: white;
+    height: 100%;
+    padding: 5px;
+
+    @media only screen and (max-width: 600px)
+    {
+        font-size: 80%;
+    }
 }
 
 a:hover
 {
-    background-color: white;
+    background-color: #4d4d4d;
 }

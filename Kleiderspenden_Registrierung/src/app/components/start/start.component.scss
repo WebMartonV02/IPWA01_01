@@ -1,19 +1,27 @@
 .starting-container-div
 {
+    margin: auto;
     height: 92%;
+    width: 100% !important;
     display: inline-grid;
     text-align: center;
     justify-items: center;
 
     .image-div
     {
-        width: 50%;
+        height: 50%;
+        width: 100%;
         margin: auto;
 
         #img-id
         {
-            width: 60%;
+            width: 30%;
             border-radius: 50px 150px;
+
+            @media  only screen and (max-width: 600px) 
+            {
+                width: 50%;   
+            }
         }
     }
 
@@ -25,6 +33,11 @@
         justify-content: center;
         letter-spacing: auto;
         width: 40%;
+
+        @media  only screen and (max-width: 600px) 
+        {
+            font-size: 150%;   
+        }
     }
 }
 
