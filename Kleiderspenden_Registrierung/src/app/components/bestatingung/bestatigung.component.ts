@@ -4,6 +4,8 @@ import { ComponentsEnum } from "src/app/shared/models/components-enum.const";
 import { UbergabeFormProviderService } from "../nav-items/geschaeftsstelle-übergabe/services/ubergabe-form-provider.service";
 import { BestatigunsModelFactory } from "./factories/bestatigungs-model.factory";
 import { BestatigungsModel } from "./models/bestatigungs.model";
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-bestatigung',
@@ -12,9 +14,12 @@ import { BestatigungsModel } from "./models/bestatigungs.model";
 })
 export class BestatigungComponent implements OnInit
 {
+    public bestatigungFormGroup: FormGroup;
     public angabenZuBestatigung: BestatigungsModel; 
 
     constructor(
+        private _formBuilder: FormBuilder,
+        private _router: Router,
         private _abholungFormProviderService: AbholungFormProviderService,
         private _ubergabeFormProviderService: UbergabeFormProviderService,
         private _bestatigungsModelFactory: BestatigunsModelFactory) { }
@@ -22,6 +27,8 @@ export class BestatigungComponent implements OnInit
     ngOnInit(): void 
     {
         this.InitializeBestatigungsFormData();
+
+        this.BuildForm();
     }
 
 
@@ -58,5 +65,16 @@ export class BestatigungComponent implements OnInit
                 break;
             } 
         }
+    }
+
+    private BuildForm(): void
+    {
+      this.bestatigungFormGroup = this._formBuilder.group(
+        {
+          abholAdresse: [this.angabenZuBestatigung.AbholAdresse],
+          kleidungsArt: [this.angabenZuBestatigung.KleidungsArt],
+          krisenGebiet: [this.angabenZuBestatigung.KrisenGebiet],
+          postleitZahl: [this.angabenZuBestatigung.PostleitZahl]
+        });
     }
 }

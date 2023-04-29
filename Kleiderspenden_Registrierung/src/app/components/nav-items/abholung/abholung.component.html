@@ -30,8 +30,8 @@
       <div>
         <mat-form-field class="form-element">
           <mat-label>Krisengebiet</mat-label>
-          <mat-select class="form-select-element" forControlName="krisenGebiet">
-          <mat-option value="" disabled selected>Wahl ein Krisengebiet</mat-option>q
+          <mat-select class="form-select-element" forControlName="krisenGebiet" required>
+          <mat-option value="" disabled selected>Wahl ein Krisengebiet</mat-option>
           <mat-option *ngFor="let country of countryNames" [value]="country.Name">{{country.Name}}</mat-option>
           </mat-select>
         </mat-form-field>

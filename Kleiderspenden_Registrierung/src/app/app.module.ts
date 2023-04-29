@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { UbergabeComponent } from './components/nav-items/geschaeftsstelle-übergabe/geschaeftsstelle-ubergabe.component';
 import { AbholungCompnent } from './components/nav-items/abholung/abholung.component';
+import { BestatigungComponent } from './components/bestatingung/bestatigung.component';
 
 //Angular-Material imports
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
     AppComponent,
     UbergabeComponent,
     AbholungCompnent,
+    BestatigungComponent,
   ],
   imports: [
     BrowserModule,

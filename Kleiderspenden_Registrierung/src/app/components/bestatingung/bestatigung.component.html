@@ -1,0 +1,51 @@
+<div class="container">
+    <div  class="form-div">
+  
+      <div class="title-div">
+        <mat-icon class="material-symbols-outlined" aria-hidden="false" fontIcon="local_shipping"></mat-icon>
+        <p>BESTATIGUNG</p>
+      </div>
+  
+      <form [formGroup]="bestatigungFormGroup">
+  
+        <div class="address-div" *ngIf="angabenZuBestatigung?.AbholAdresse && angabenZuBestatigung?.PostleitZahl">
+          <mat-form-field class="form-element-adresse">
+            <mat-label>AbholAdresse</mat-label>
+            <input class="form-input-element" matInput formControlName="abholAdresse" disabled/>
+          </mat-form-field >
+        
+          <mat-form-field class="form-element-plz">
+            <mat-label>PLZ</mat-label>
+            <input matInput type="number" formControlName="postleitZahl" disabled/>
+          </mat-form-field>
+        </div>
+      
+        <div>
+          <mat-form-field class="form-element">
+            <mat-label>Kleidungsart</mat-label>
+            <input class="form-input-element" matInput formControlName="kleidungsArt" aria-describedby="search-field" disabled/>
+          </mat-form-field>
+        </div>
+      
+        <div>
+          <mat-form-field class="form-element">
+            <mat-label>Krisengebiet</mat-label>
+            <mat-select 
+                class="form-select-element" 
+                forControlName="krisenGebiet"
+                [disabled]="true">
+            <mat-option value="" disabled selected>Wahl ein Krisengebiet</mat-option>q
+            <mat-option *ngFor="let country of countryNames" [value]="country.Name">{{country.Name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      
+        <button class="mat-button" mat-raised-button class="form-element" (onClick)="true">
+          <mat-icon>done</mat-icon>
+          Bestätigen
+        </button>
+      
+      </form>
+  
+    </div>
+  </div>
