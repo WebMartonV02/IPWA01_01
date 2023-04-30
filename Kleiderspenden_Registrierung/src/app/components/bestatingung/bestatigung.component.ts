@@ -6,6 +6,8 @@ import { BestatigunsModelFactory } from "./factories/bestatigungs-model.factory"
 import { BestatigungsModel } from "./models/bestatigungs.model";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
+import { CountryModel } from "src/app/shared/models/country.model";
+import { ProvidedCountryNames } from "src/app/shared/countries.provider";
 
 @Component({
     selector: 'app-bestatigung',
@@ -16,6 +18,7 @@ export class BestatigungComponent implements OnInit
 {
     public bestatigungFormGroup: FormGroup;
     public angabenZuBestatigung: BestatigungsModel; 
+    public countryNames: Array<CountryModel> = ProvidedCountryNames;
 
     constructor(
         private _formBuilder: FormBuilder,
@@ -71,10 +74,10 @@ export class BestatigungComponent implements OnInit
     {
       this.bestatigungFormGroup = this._formBuilder.group(
         {
-          abholAdresse: [this.angabenZuBestatigung.AbholAdresse],
-          kleidungsArt: [this.angabenZuBestatigung.KleidungsArt],
-          krisenGebiet: [this.angabenZuBestatigung.KrisenGebiet],
-          postleitZahl: [this.angabenZuBestatigung.PostleitZahl]
+          abholAdresse: [{ value: this.angabenZuBestatigung.AbholAdresse, disabled: true }],
+          kleidungsArt: [{ value: this.angabenZuBestatigung.KleidungsArt, disabled: true }],
+          krisenGebiet: [{ value: this.angabenZuBestatigung.KrisenGebiet, disabled: true }],
+          postleitZahl: [{ value: this.angabenZuBestatigung.PostleitZahl, disabled: true }],
         });
     }
 }

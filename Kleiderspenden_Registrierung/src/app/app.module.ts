@@ -18,6 +18,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { AbholungFormProviderService } from './components/nav-items/abholung/services/abholung-form-provider.service';
+import { UbergabeFormProviderService } from './components/nav-items/geschaeftsstelle-übergabe/services/ubergabe-form-provider.service';
+import { BestatigunsModelFactory } from './components/bestatingung/factories/bestatigungs-model.factory';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [AbholungFormProviderService, UbergabeFormProviderService, BestatigunsModelFactory],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

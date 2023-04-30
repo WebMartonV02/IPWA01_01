@@ -32,6 +32,8 @@ export class AbholungCompnent implements OnInit
 
     public NavigateToBestatigungPage(): void
     {
+      console.log('asd')
+
       this._abholungFormProviderService.SetData(this._abholungsModel);
       this._abholungFormProviderService.SetExecuterComponent(ComponentsEnum.Abholung);
       

@@ -11,19 +11,19 @@
         <div class="address-div" *ngIf="angabenZuBestatigung?.AbholAdresse && angabenZuBestatigung?.PostleitZahl">
           <mat-form-field class="form-element-adresse">
             <mat-label>AbholAdresse</mat-label>
-            <input class="form-input-element" matInput formControlName="abholAdresse" disabled/>
+            <input class="form-input-element" matInput formControlName="abholAdresse" />
           </mat-form-field >
         
           <mat-form-field class="form-element-plz">
             <mat-label>PLZ</mat-label>
-            <input matInput type="number" formControlName="postleitZahl" disabled/>
+            <input matInput type="number" formControlName="postleitZahl" />
           </mat-form-field>
         </div>
       
         <div>
           <mat-form-field class="form-element">
             <mat-label>Kleidungsart</mat-label>
-            <input class="form-input-element" matInput formControlName="kleidungsArt" aria-describedby="search-field" disabled/>
+            <input class="form-input-element" matInput formControlName="kleidungsArt" aria-describedby="search-field" />
           </mat-form-field>
         </div>
       
