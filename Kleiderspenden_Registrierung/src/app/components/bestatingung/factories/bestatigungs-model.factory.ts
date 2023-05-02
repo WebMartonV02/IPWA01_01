@@ -1,5 +1,7 @@
+import { Injectable } from "@angular/core";
 import { BestatigungsModel } from "../models/bestatigungs.model";
 
+@Injectable()
 export class BestatigunsModelFactory
 {
     public Create(

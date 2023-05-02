@@ -5,11 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { UbergabeComponent } from './components/nav-items/geschaeftsstelle-übergabe/geschaeftsstelle-ubergabe.component';
 import { AbholungCompnent } from './components/nav-items/abholung/abholung.component';
 import { BestatigungComponent } from './components/bestatingung/bestatigung.component';
+import { BestatigunsModelFactory } from './components/bestatingung/factories/bestatigungs-model.factory';
+import { AbholungFormProviderService } from './components/nav-items/abholung/services/abholung-form-provider.service';
+import { UbergabeFormProviderService } from './components/nav-items/geschaeftsstelle-übergabe/services/ubergabe-form-provider.service';
 
 //Angular-Material imports
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -18,9 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { AbholungFormProviderService } from './components/nav-items/abholung/services/abholung-form-provider.service';
-import { UbergabeFormProviderService } from './components/nav-items/geschaeftsstelle-übergabe/services/ubergabe-form-provider.service';
-import { BestatigunsModelFactory } from './components/bestatingung/factories/bestatigungs-model.factory';
+import { CommonComponentHandlerService } from './shared/common-component-handler.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { BestatigunsModelFactory } from './components/bestatingung/factories/bes
     BrowserAnimationsModule,
     NgSelectModule,
     ReactiveFormsModule,
+    FormsModule,
 
     MatToolbarModule,
     MatFormFieldModule,
@@ -43,7 +45,10 @@ import { BestatigunsModelFactory } from './components/bestatingung/factories/bes
     MatButtonModule,
     MatIconModule,
   ],
-  providers: [AbholungFormProviderService, UbergabeFormProviderService, BestatigunsModelFactory],
+  providers: [ { provide:'abholungService', useClass: AbholungFormProviderService },
+               { provide:'ubergabeService', useClass: UbergabeFormProviderService },
+               { provide:'commonComponentHandlerService', useClass: CommonComponentHandlerService },
+               BestatigunsModelFactory ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
