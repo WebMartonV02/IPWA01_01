@@ -9,6 +9,7 @@ import { ProvidedCountryNames } from "src/app/shared/countries.provider";
 import { AbholungFormProviderService } from "../nav-items/abholung/services/abholung-form-provider.service";
 import { CommonComponentHandlerService } from "src/app/shared/common-component-handler.service";
 import { UbergabeFormProviderService } from "../nav-items/geschaeftsstelle-übergabe/services/ubergabe-form-provider.service";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
     selector: 'app-bestatigung',
@@ -25,6 +26,7 @@ export class BestatigungComponent implements OnInit
         private _formBuilder: FormBuilder,
         private _router: Router,
         private _bestatigungsModelFactory: BestatigunsModelFactory,
+        private _snackBarService: MatSnackBar,
         @Inject('abholungService') private _abholungFormProviderService: AbholungFormProviderService,
         @Inject('ubergabeService') private _ubergabeFormProviderService: UbergabeFormProviderService,
         @Inject('commonComponentHandlerService') private _commonComponentHandlerService: CommonComponentHandlerService) { }
@@ -34,11 +36,12 @@ export class BestatigungComponent implements OnInit
         this.InitializeBestatigungsFormData();
 
         this.BuildForm();
+
+        this._snackBarService.open('Bitte überprüfen Sie die eingegebene Angaben!', 'OK', { duration: 2000 });
     }
 
     private InitializeBestatigungsFormData(): void
     {
-        console.log(this._abholungFormProviderService)
         switch(this._commonComponentHandlerService.GetAncestorComponent())
         {
             case ComponentsEnum.Abholung:
@@ -70,6 +73,11 @@ export class BestatigungComponent implements OnInit
                 break;
             } 
         }
+    }
+
+    public OnPressForWardToTheStartingPage(): void
+    {
+        this._router.navigate(['']);
     }
 
     private BuildForm(): void

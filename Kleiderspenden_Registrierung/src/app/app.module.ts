@@ -13,6 +13,7 @@ import { BestatigungComponent } from './components/bestatingung/bestatigung.comp
 import { BestatigunsModelFactory } from './components/bestatingung/factories/bestatigungs-model.factory';
 import { AbholungFormProviderService } from './components/nav-items/abholung/services/abholung-form-provider.service';
 import { UbergabeFormProviderService } from './components/nav-items/geschaeftsstelle-übergabe/services/ubergabe-form-provider.service';
+import { CommonComponentHandlerService } from './shared/common-component-handler.service';
 
 //Angular-Material imports
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -21,7 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { CommonComponentHandlerService } from './shared/common-component-handler.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CommonComponentHandlerService } from './shared/common-component-handler
     MatSelectModule,
     MatButtonModule,
     MatIconModule,
+    MatSnackBarModule,
   ],
   providers: [ { provide:'abholungService', useClass: AbholungFormProviderService },
                { provide:'ubergabeService', useClass: UbergabeFormProviderService },
