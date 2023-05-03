@@ -36,7 +36,6 @@ export class BestatigungComponent implements OnInit
         this.BuildForm();
     }
 
-
     private InitializeBestatigungsFormData(): void
     {
         console.log(this._abholungFormProviderService)

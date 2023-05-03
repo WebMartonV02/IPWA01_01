@@ -7,7 +7,7 @@ import { BestatigungComponent } from './components/bestatingung/bestatigung.comp
 
 const routes: Routes = 
 [
-  {path:"", component: StartComponent},
+  {path:'', component: StartComponent},
   {path:'ubergabe', component: UbergabeComponent},
   {path:'abholung', component: AbholungCompnent},
   {path:'bestatigung', component: BestatigungComponent},
